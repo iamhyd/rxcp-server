@@ -58,7 +58,7 @@ export class AccountController {
   @ApiBadRequestResponse({ description: 'Validation failed' })
   @ApiConflictResponse({ description: 'Conflict' })
   async createOne(@Body() createAccountDto: CreateAccountDto): Promise<Login> {
-    return await this.accountService
+    return this.accountService
       .createOne(createAccountDto)
       .catch((err) => {
         throw new HttpException(err.message, HttpStatus.CONFLICT);
@@ -75,7 +75,7 @@ export class AccountController {
     @Param('id') id: string,
     @Body() updateAccountDto: UpdateAccountDto,
   ): Promise<Login> {
-    return await this.accountService
+    return this.accountService
       .updateOne(id, updateAccountDto)
       .catch((err) => {
         throw new HttpException(err.message, HttpStatus.BAD_REQUEST);
@@ -89,7 +89,7 @@ export class AccountController {
   })
   @ApiBadRequestResponse({ description: 'No result could be found' })
   async findOne(@Param('id') id: string): Promise<Login> {
-    return await this.accountService.findOne(id).catch((err) => {
+    return this.accountService.findOne(id).catch((err) => {
       throw new HttpException(err.message, HttpStatus.BAD_REQUEST);
     });
   }

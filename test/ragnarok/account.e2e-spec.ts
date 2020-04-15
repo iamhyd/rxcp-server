@@ -18,7 +18,7 @@
 //       imports: [CharacterModule],
 //       controllers: [],
 //       providers: [],
-//     }).compile(); 
+//     }).compile();
 
 //     console.log(app)
 //     app = module.createNestApplication();

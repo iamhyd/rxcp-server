@@ -43,7 +43,7 @@ export class AccountService {
    * Finds `Account`
    */
   async findOne(id: string): Promise<Login> {
-    return await this.accountsRepository
+    return this.accountsRepository
       .findOneOrFail({ where: { accountId: id } })
       .catch(() => {
         return Promise.reject({
@@ -94,7 +94,7 @@ export class AccountService {
       birthdate,
     });
 
-    return await this.accountsRepository.save(newAccount);
+    return this.accountsRepository.save(newAccount);
   }
 
   /**
