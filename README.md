@@ -1,5 +1,7 @@
 # RxCP Server
 
+[![CodeFactor](https://www.codefactor.io/repository/github/rxcp/rxcp-server/badge/develop)](https://www.codefactor.io/repository/github/rxcp/rxcp-server/overview/develop)
+
 The API for RxCP, a control panel for rAthena servers
 
 ## Installation
